@@ -225,3 +225,20 @@ Stand Alone ran out its rounds. The screen said **Sadhana complete**. The crew t
 The verdict from the teacher stands — the app did NOT get the job done, and saying so out loud is what got it fixed in an afternoon. Fifteen footguns now, every one caught the same way: an artifact you can go check. The little tree thinks. The engine breathes. The mandala is counting.
 
 **Source of record:** Field Log, Entry 017; screenshots verify-05 through verify-07; localStorage `{"chantId":"brahmananda_swarupa","days":["2026-06-12"]}`.
+
+# ACT 4 — THE NIGHT LIBRARY
+
+---
+
+## DISPATCH 17 — THE TRAILER
+**2026-06-12 // After hours**
+
+The new orders sounded like a children's assignment: bedtime stories. The crew treated it like every other mission — first by checking whether the premise was even real. It was: PrismML shipped an image model in May, under a gigabyte at 1-bit, and nobody had built the obvious thing with it yet.
+
+So they built a library that only opens at night. A 590MB writer streams a story drawn from the oldest canon humans have — Gilgamesh, Hanuman, Anansi, a bicycle shop in Ohio — and a meter shows the two speeds that explain this whole company: the model writing at sixty-some tokens a second, and a parent's voice at two-point-six words. The story is finished half a minute before it can be spoken. When a child interrupts to choose what happens next, the next page begins in a fifth of a second, which is to say: before doubt.
+
+The numbers are filed, the wobbles too — a 1.7B model drops a word like a tired parent skipping a sentence, and the README admits it. One new footgun for the ledger: launch the server from an automation context and macOS quietly throttles it to a quarter speed. Even the delivery trucks get inspected; now so do the priorities of the loading dock.
+
+The big claim stands without hype, which is the only way this ship makes claims: below the attention threshold, new products exist. The bedtime studio fits in two gigabytes and never phones home. The little tree thinks — and now, after dark, it tells stories.
+
+**Source of record:** github.com/ChaiWithJai/the-night-library — Field Log, Entries 018–019; measured TTFT 0.16s, branch continuation ~0.2s; Bonsai Image 4B card numbers cross-checked on the live web.
