@@ -94,3 +94,17 @@ The Grok thread that started this could not be trusted. Verified against the rea
 - FOOTGUN #15 — heuristic HTTP caching: StaticFiles sends no Cache-Control; browsers cached the module shell on their own (10% of Last-Modified age). Deployed fixes weren't reaching the page even SW-less. Fix: Cache-Control: no-cache middleware on /app/*.
 - Verified live, fresh caches, trusted clicks, synthetic-mic injection (oscillator-backed getUserMedia — the room can finally "sing" on demand): silence blocked at 0s and 16s; 2.5s of voicing advanced; all four lines + memory gate EARNED; Listen→Follow at the scheduled audio-clock tick (event armed at t=29.6, fired on time); Call & Response alternating Sing/Listen turns with the mala counting 1→5; Bonsai scoring live on stage completions (composite .42, discipline .79, coaching text rendered); adaptation now contract-valid from the model itself — key pinned to A, tempo 75 in-window, real reason text, no fallback flag.
 - Sampling note: adaptation first-call 10.3s cold, 2.8-4.2s warm (called between stages, off the audio path — acceptable; the clock never waits for it).
+
+# ACT 4 — THE NIGHT LIBRARY (the trailer)
+
+## Entry 018 — 2026-06-12 — Verification first, as always
+- New orders: a simpler, cuter workload — real-time bedtime stories — to serve as the "Bonsai 101" trailer for intelligence density. Premise required an image model. Standing order applied: trust nothing that says Bonsai without checking.
+- VERIFIED: prism-ml shipped Bonsai Image 4B on May 26 — text-to-image DiT distilled from FLUX.2 Klein 4B, 1-bit (0.93GB) and ternary (1.21GB), MLX-native (no fork for the MLX line — mainline kernels). Card numbers: 512² in 5.78s on M4 Pro (4 steps), 9.4s on iPhone 17 Pro Max via MLX Swift.
+- Airlock posture: PrismML-Eng/Bonsai-Image-Demo (their FastAPI studio, POST /generate) is integrated as a documented OPTIONAL backend the human starts; the page always works via a procedural dream canvas painted from grammar-pinned scene JSON.
+
+## Entry 019 — 2026-06-12 — The library opens
+- Shipped github.com/ChaiWithJai/the-night-library: single-file web app streaming Ternary-Bonsai-1.7B straight from llama-server (CORS verified), twelve-civilization canon with truth notes, bedtime rubric, grammar-pinned judge.
+- The demo's centerpiece is a meter with two cursors: Bonsai writing vs a parent reading aloud (~2.6 w/s). Measured live: 0.16s TTFT, 62 tok/s in busy machine state (125.8 on the quiet morning run), story written ~30s ahead of the voice within the first beat. Child-chosen branches continue in ~0.2s — under the attention threshold, which is the entire thesis.
+- Grammar-as-contract carried the whole stack again: scene JSON (enum moods/times) drives both the dream canvas and the image-studio prompt; branch options and judge scores are schema-pinned. Judge sample: composite 0.82, sleep gate PASS.
+- FOOTGUN #16: llama-server launched from a background/automation context (nohup, launchd, CI) lands in macOS background QoS — prompt processing measured at 29 tok/s, recovering to 128 tok/s at normal priority. Check `ps -o stat` for the N flag before blaming the model.
+- 1.7B wobbles filed honestly: dropped words ("clutch" for "clutching"), bent quotes, one "Han" for "Hanuman". The README says so, because the standing rule binds us too.
