@@ -17,14 +17,18 @@ the way. Everything below is reproducible and every claim has an artifact.
 | Ternary-Bonsai-1.7B F16, Metal | **125.8 tok/s**, 3.2GB |
 | Mainline `llama-quantize F16 → TQ2_0` | **590MB @ 2.88 BPW, 111 tok/s** — the fork-gated density win, recovered inside verified tooling |
 | Real app integration | Gemini cloud SDK fully replaced by Bonsai-local; 14/14 tests; grammar-constrained JSON the model *cannot* get wrong |
-| Adoption blockers documented | **15 footguns**, each with a reproduction and a fix |
-| Time from model card → shipped case study | ~48 hours |
+| Second app, real-time | [The Night Library](https://github.com/ChaiWithJai/the-night-library) — bedtime stories streamed ~30× faster than read-aloud, illustrated by Bonsai Image 4B, fully on-device |
+| Adoption blockers documented | **18 footguns**, each with a reproduction and a fix |
+| Time from model card → two shipped case studies | ~52 hours |
 
 ## The story (read these in order)
 
-1. **[docs/JOURNEY.md](docs/JOURNEY.md)** — the raw field log. Three acts: validating
-   Bonsai against unreliable synthetic intel; forging a product on top of it; then
-   auditing that product against its job-to-be-done and fixing what failed.
+1. **[docs/JOURNEY.md](docs/JOURNEY.md)** — the raw field log. Five acts: validating
+   Bonsai against unreliable synthetic intel; forging a product on top of it; auditing
+   that product against its job-to-be-done and fixing what failed; building a second,
+   real-time app (The Night Library) as the intelligence-density trailer; then the
+   craft pass — including the correction where a "model wobble" turned out to be my
+   own bug, caught by going to the artifact.
 2. **[docs/CHRONICLE.md](docs/CHRONICLE.md)** — the same campaign as an embedded-journalist
    narrative. This is the social-content engine: every dispatch decomposes into a thread,
    a short, or a talk beat. *"Fluent intel is not verified intel"* is the through-line.
@@ -38,7 +42,7 @@ the way. Everything below is reproducible and every claim has an artifact.
    Summit, upstreaming your kernels to mainline llama.cpp), and a funnel that makes DevRel
    measurable. ([15-slide deep version](docs/PRISMML_PITCH.md).)
 
-## The demo app
+## The demo apps
 
 **Nada Sadhana** — AI-assisted kirtan/mantra practice, stunning on mobile, running
 entirely on Bonsai-local. The WebAudio engine never pauses mid-stage; pitch detection
@@ -55,13 +59,26 @@ grammar-pinned so it can't even *emit* an off-key adaptation.
 reject 16 seconds of silent-room ambience), Call & Response on the audio clock with live
 Bonsai scoring, and the first completed sadhana writing "Day 1 of 40."*
 
+**[The Night Library](https://github.com/ChaiWithJai/the-night-library)** — the
+"Bonsai 101" trailer: a fully-local bedtime storyteller. A 590MB writer streams a
+story drawn from a twelve-civilization canon ~30× faster than a parent reads aloud;
+Bonsai Image 4B illustrates each beat on-device. The page makes intelligence density
+*visible* — a meter showing the model writing 30 seconds ahead of your voice, and
+unread words sitting faint on the page like ink waiting for light. Its own repo carries
+reference-grade docs (a demo runbook, an extension guide, a contributor's path where
+the bedtime rubric, not taste, is the gatekeeper).
+
 ## Why this is a DevRel application
 
 Your hardest problem isn't model quality — I measured the model; it's excellent. It's
 that **developers churn silently**: Bonsai-8B-Q1_0 *loads* on stock llama.cpp and then
 runs ~1000x slow through a fallback path. No error, no issue filed — the developer just
-leaves believing "Bonsai is slow." Fifteen documented footguns in this repo are fifteen
-silent exits happening at scale right now.
+leaves believing "Bonsai is slow." Eighteen documented footguns across these repos are
+eighteen silent exits happening at scale right now — including two an integrator hits
+the *second* they reach for the image studio (its FastAPI sends no CORS headers, so the
+browser can't call it at all) and a streaming-render trap that, until I traced it to the
+artifact, I had wrongly blamed on the model itself (footgun #17 — the correction is in
+the field log, Act 5, because the standing rule binds me too).
 
 What I do about it, demonstrated here:
 

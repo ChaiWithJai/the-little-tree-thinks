@@ -242,3 +242,31 @@ The numbers are filed, the wobbles too — a 1.7B model drops a word like a tire
 The big claim stands without hype, which is the only way this ship makes claims: below the attention threshold, new products exist. The bedtime studio fits in two gigabytes and never phones home. The little tree thinks — and now, after dark, it tells stories.
 
 **Source of record:** github.com/ChaiWithJai/the-night-library — Field Log, Entries 018–019; measured TTFT 0.16s, branch continuation ~0.2s; Bonsai Image 4B card numbers cross-checked on the live web.
+
+# ACT 5 — THE CRAFT
+
+---
+
+## DISPATCH 18 — THE WOBBLE THAT WAS A LIE
+**2026-06-12 // Night Library, the morning after**
+
+I owe you a correction, and the crew owes itself a harder look in the mirror. Yesterday I filed, as fact, that the little writer occasionally dropped a syllable — "Han" for "Hanuman" — and called it the honest imperfection of a 590-megabyte mind. It was honest. It was also wrong.
+
+Jai sent a screenshot: a king named "Gil," a kingdom called "U," and not a single period anywhere on the page. The fluent explanation was sitting right there, warm and ready — *it's a small model, names are hard.* The crew refused it and went to the artifact, which is the only thing this ship has ever trusted. The model had written "Gilgamesh." in full, period included. Our own renderer had been guillotining the back half of every word that arrived in more than one piece — and a streamed word almost always arrives in more than one piece. The bug had been wearing the model's coat.
+
+They filed it where it belonged: footgun #17, a trap waiting for anyone who renders a token stream the obvious wrong way. Then they nailed the names down twice over — a cast list the model copies instead of recalls, and a penalty dialed back off the throat of every proper noun. The lesson is the oldest one we carry: the most dangerous wrong answer is the one that sounds exactly like a true one. We almost let the model take the blame for our mistake because the blame was *plausible.* Plausible is the enemy. The artifact is the friend.
+
+**Source of record:** Field Log, Entry 020 — the screenshot, the renderer trace, the fix verified against a Gilgamesh story with its periods restored and its kings full-named.
+
+---
+
+## DISPATCH 19 — THE AIRLOCK, THE PROXY, AND THE POLISH
+**2026-06-12 // Same day, the studio finally lit**
+
+The image model came aboard in earnest. The crew cloned PrismML's demo, fed the Mac the Metal toolchain it was missing, and pulled three and a half gigabytes of ternary weights down to the exact berth the scripts expected. Then the airlock did its job one more time, right on cue: the classifier refused to *run* the external setup script, so that single command stays in human hands. Nobody overrode it. You don't preach verification all season and then pipe a stranger's shell script into your own machine on the last mile.
+
+The browser met the studio and bounced — a CORS wall, filed as footgun #18 — so the crew built a ninety-line stdlib proxy and let the page and the painter share one origin. They checked the studio's real contract against its live schema instead of its prose, found it returns raw image bytes where they'd assumed JSON, and corrected course. Then the render landed: a lamplit Uruk, painted on-device in about eleven seconds, the little chip on the frame flipping over to say *Bonsai Image 4B, this device.*
+
+And then, the part that separates a demo from a product: they wrote it all down properly. Reference pages with every port and knob and failure mode. A demo runbook with recovery moves for the things that break on stage. A contributor's path where a new storyteller's first gift is a story, and the judge — not a maintainer's taste — decides if it's good enough. Documentation at the grade the serious houses hold themselves to, because a trailer that can't be re-run, extended, and re-told by a stranger is just a magic trick. This one comes with the method.
+
+**Source of record:** Field Log, Entry 021 — live render through the proxy, the OpenAPI-verified contract, footgun #18, and the Diátaxis doc set.
