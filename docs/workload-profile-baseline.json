@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-07-22T16:29:49-04:00",
+  "reference_host": {
+    "model": "MacBook Pro Mac16,8",
+    "chip": "Apple M4 Pro",
+    "cores": 12,
+    "memory_gb": 24,
+    "platform": "macOS-26.5-arm64"
+  },
+  "api": {
+    "requests": 100,
+    "concurrency": 8,
+    "errors": 0,
+    "throughput_rps": 1072.03,
+    "latency_ms": {"min": 0.58, "p50": 3.877, "p95": 38.074, "max": 65.278}
+  },
+  "retrieval": {
+    "queries": 120,
+    "chunks": 2003,
+    "latency_ms": {"min": 37.85, "p50": 40.016, "p95": 47.977, "max": 58.428}
+  },
+  "retained_runs": {
+    "count": 3,
+    "database_bytes": 77824,
+    "text_latency_ms": [54326, 44491, 37435],
+    "fallbacks": 0
+  },
+  "state_bytes": 6807642
+}

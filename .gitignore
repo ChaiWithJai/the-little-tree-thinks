@@ -2,3 +2,9 @@ models/
 .playwright-mcp/
 .DS_Store
 *.gguf
+.bonsai-agent/
+__pycache__/
+.playwright-cli/
+output/
+bonsai_agent.config.json
+.venv/

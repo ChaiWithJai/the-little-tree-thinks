@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "Rachel menswear study",
+    "author": "@rachcorrine",
+    "principles": ["natural fabrics", "simple outfit formulas", "clean fit", "quality basics", "seasonal layering", "situational dressing"],
+    "palette": ["warm cream", "washed denim", "tobacco brown", "charcoal", "olive", "black leather"]
+  },
+  "presets": [
+    {
+      "id": "natural-uniform-moodboard",
+      "label": "Visual moodboard",
+      "category": "moodboard",
+      "source": "Rachel menswear study",
+      "intent": "Translate the natural-fabric and simple-uniform philosophy into an art-directed visual system.",
+      "prompt": "Create an editorial visual moodboard titled THE NATURAL UNIFORM. Art direction: tactile, masculine, understated, analog, slightly cinematic. Use a warm cream, washed-denim blue, tobacco brown, charcoal, olive, and black-leather palette. Build an asymmetric magazine collage with large typographic statements, color swatches, CSS-made fabric textures for linen, denim, wool, leather, and suede, outfit silhouette panels, material labels, and seasonal notes. Core ideas: denim plus a good tee; natural fibers over synthetics; clean trousers; loafers year-round; leather and linen as contrast; buy quality basics and ignore trend churn. No ecommerce chrome. Make the page feel like a creative director's working board, not a generic dashboard.",
+      "acceptance": ["Includes palette, material textures, silhouettes, and editorial principles", "Asymmetric collage remains readable on mobile", "Visual hierarchy feels like a fashion magazine", "Uses no external image or font URLs"]
+    },
+    {
+      "id": "linen-overshirt-product",
+      "label": "Product detail page",
+      "category": "product-page",
+      "source": "Rachel menswear study",
+      "intent": "Turn the material-first philosophy into a credible premium product experience.",
+      "prompt": "Create a premium product detail page for THE FIELD OVERSHIRT, a tobacco-brown linen and cotton layer priced at $168. Use editorial menswear art direction: warm cream canvas, deep charcoal type, washed denim accents, restrained rules, tactile CSS texture panels, and generous whitespace. Include a CSS-art product gallery with thumbnails, product title and price, color swatches, size selection, add-to-wardrobe button, natural-fiber composition, fit notes, care, shipping, and a styling formula pairing it with a white tee, medium-wash denim, brown belt, and suede loafers. Include a compact mobile purchase bar. Avoid generic SaaS styling.",
+      "acceptance": ["Product gallery, variants, sizing, price, and purchase action are present", "Material and fit information are prominent", "Mobile purchase action remains reachable", "Buttons and selectors have visible interaction states"]
+    },
+    {
+      "id": "seasonal-lookbook",
+      "label": "Seasonal lookbook",
+      "category": "lookbook",
+      "source": "Rachel menswear study",
+      "intent": "Express the same wardrobe fundamentals through seasonal progression.",
+      "prompt": "Create an editorial lookbook called SUMMER INTO FALL. Show four full-width CSS-art looks that progress from hot-weather linen to darker denim, suede, leather, and chunky knit layers. Use oversized look numbers, concise outfit formulas, material callouts, a cream-to-charcoal color progression, and horizontal editorial rules. Include: jeans and tee summer; Johnny-collar polo with linen shorts; overshirt with medium denim and suede loafers; fall Henley with leather jacket and boots. Make scrolling feel cinematic and keep mobile compositions intentional.",
+      "acceptance": ["Contains four distinct seasonal looks", "Every look has an outfit formula and material callouts", "Color progression communicates the seasonal transition", "Mobile layout preserves editorial sequencing"]
+    },
+    {
+      "id": "capsule-wardrobe",
+      "label": "Capsule wardrobe",
+      "category": "collection-guide",
+      "source": "Rachel menswear study",
+      "intent": "Make the quality-basics philosophy useful as a bounded wardrobe system.",
+      "prompt": "Create a shoppable editorial guide titled THE 12-PIECE NATURAL WARDROBE. Present a disciplined capsule: white tee, black tee, Henley, knit polo, linen shirt, overshirt, light denim, dark denim, linen trouser, loafers, white sneaker, and leather jacket. Use a numbered modular grid, material badges, palette chips, outfit-combination counter, and three occasion formulas for coffee, hot-weather gathering, and drinks. Art direction is quiet luxury without luxury clichés: cream paper, serif headlines, olive and tobacco accents, crisp black rules.",
+      "acceptance": ["Exactly twelve wardrobe building blocks are shown", "Natural material information is visible", "Includes at least three occasion formulas", "Grid collapses cleanly without losing numbering"]
+    },
+    {
+      "id": "fit-and-fabric-editorial",
+      "label": "Editorial style guide",
+      "category": "editorial-guide",
+      "source": "Rachel menswear study",
+      "intent": "Convert the source advice into a readable long-form visual essay.",
+      "prompt": "Create a long-form editorial feature titled FIT, FABRIC, FORMULA. Open with a bold thesis about simple clothes worn well. Build chapters for natural fibers, the denim-and-tee uniform, trousers that fall cleanly, seasonal layering, footwear, and situational dressing. Use pull quotes, diagrams made with CSS, fabric comparison cards, marginal notes, and a sticky chapter index. Palette: newsprint cream, ink black, denim blue, tobacco, and muted olive. Typography should feel like an independent fashion journal.",
+      "acceptance": ["Includes all six editorial chapters", "Sticky index provides useful navigation", "Pull quotes and diagrams break up long text", "Reading width and contrast remain accessible"]
+    },
+    {
+      "id": "natural-fibers-collection",
+      "label": "Collection grid",
+      "category": "collection-page",
+      "source": "Rachel menswear study",
+      "intent": "Apply the same material hierarchy to a browseable commerce collection.",
+      "prompt": "Create a collection page titled SHOP BY MATERIAL for a menswear store. Organize products under Linen, Cotton, Wool, Denim, Leather, and Suede using tactile CSS-art thumbnails, product names, prices, material percentages, and quick-add controls. Add filters for season, occasion, color, and fit plus a short manifesto explaining why natural fibers age well. Use cream, charcoal, washed blue, olive, and brown; keep controls elegant and editorial rather than dashboard-like.",
+      "acceptance": ["Six material groups are represented", "Product cards include price and composition", "Filter controls are keyboard accessible", "Collection grid adapts from desktop to mobile"]
+    }
+  ]
+}

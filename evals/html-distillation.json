@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "version": "teacher-v1",
+  "teacher_bar": "A strong frontier design model: decisive art direction, complete responsive composition, finished copy, no framework defaults.",
+  "common_lessons": [
+    "Begin with a visual thesis and one dominant gesture; do not distribute emphasis evenly.",
+    "Use scale contrast of at least 6:1 between display type and annotations.",
+    "Create depth with crop, overlap, texture, rotation and rules before using shadows.",
+    "Alternate compression and release: dense evidence, then generous negative space.",
+    "Every decorative element must reinforce material, season, product or narrative meaning.",
+    "Write specific editorial copy; generic claims reveal generic thinking.",
+    "Mobile is a recomposition with its own rhythm, not merely stacked desktop columns.",
+    "Use short entrance motion only to clarify hierarchy and honor reduced-motion preferences."
+  ],
+  "anti_patterns": [
+    "centered marketing hero followed by three equal cards",
+    "rounded SaaS cards and pill-shaped calls to action",
+    "purple gradients, glassmorphism, emoji icons or decorative dashboards",
+    "identical section padding and monotonous content density",
+    "placeholder imagery, lorem ipsum or copy that describes the component",
+    "inline styles that prevent a coherent responsive system"
+  ],
+  "recipes": {
+    "natural-uniform-moodboard": {
+      "emotional_target": "The quiet confidence of a creative director pinning tactile references to a sun-faded studio wall.",
+      "dominant_gesture": "A monumental two-line title collides with an off-axis material specimen composition.",
+      "rhythm": "monumental masthead → dense textile evidence → chromatic pause → human silhouettes → quiet manifesto",
+      "signature_details": ["folio coordinates", "tape labels", "rotated specimen", "selvedge rules", "material index", "seasonal field note"],
+      "mobile_recomposition": "Title becomes three deliberate lines; specimens form one cropped vertical procession; annotations remain visible."
+    },
+    "linen-overshirt-product": {
+      "emotional_target": "Handling a considered garment in a calm atelier.",
+      "dominant_gesture": "A cropped garment study occupies two thirds of the first viewport beside a typographic purchase ledger.",
+      "rhythm": "product study → decision ledger → fiber proof → styling formula",
+      "signature_details": ["specimen number", "fiber ratio", "construction notes", "sticky purchase ledger"],
+      "mobile_recomposition": "Gallery leads, information becomes a reading sequence, purchase action rests at the bottom edge."
+    },
+    "seasonal-lookbook": {
+      "emotional_target": "Walking from late summer heat into the first cold evening.",
+      "dominant_gesture": "Four cinematic chapters shift in temperature and weight.",
+      "rhythm": "air → sun → structure → shelter",
+      "signature_details": ["oversized look numbers", "temperature index", "material captions", "vertical silhouette crops"],
+      "mobile_recomposition": "Each look becomes a self-contained screen with number, silhouette and formula."
+    },
+    "capsule-wardrobe": {
+      "emotional_target": "Relief created by a disciplined, finite wardrobe.",
+      "dominant_gesture": "Twelve numbered pieces form a rigorous inventory interrupted by three useful formulas.",
+      "rhythm": "thesis → inventory → combinations → occasions",
+      "signature_details": ["inventory numbers", "fiber stamps", "combination count", "occasion strips"],
+      "mobile_recomposition": "A two-column numbered inventory preserves comparison without visual noise."
+    },
+    "fit-and-fabric-editorial": {
+      "emotional_target": "The authority and intimacy of an independent fashion journal.",
+      "dominant_gesture": "A thesis spans the page while a narrow chapter rail anchors a measured reading column.",
+      "rhythm": "thesis → evidence → pause → diagram → application",
+      "signature_details": ["folio numbers", "margin notes", "pull quote", "fit diagram", "fiber comparison"],
+      "mobile_recomposition": "The index becomes a horizontal chapter ribbon and notes join the reading flow."
+    },
+    "natural-fibers-collection": {
+      "emotional_target": "Browsing a material library rather than scrolling an ecommerce grid.",
+      "dominant_gesture": "Material families create horizontal chapters with tactile specimens and restrained buying controls.",
+      "rhythm": "manifesto → filters → six material chapters → closing care note",
+      "signature_details": ["material index", "fiber percentages", "tactile specimens", "quiet quick-add"],
+      "mobile_recomposition": "Filters become a horizontal rail and each material remains a clearly bounded chapter."
+    }
+  }
+}
