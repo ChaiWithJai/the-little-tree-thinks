@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "evaluatedAt": "2026-07-23",
+  "comparisonPolicy": {
+    "observedSystem": "Bonsai Workbench plus whatif/productions/bonsai-persona-films",
+    "target": "Declared GPT-5.6 / Sol 5.6 product-quality contract",
+    "targetEvidence": "inferred",
+    "warning": "No local Sol reference run was found. Target scores are acceptance thresholds, not measured model output."
+  },
+  "workbench": {
+    "jobs": 23,
+    "reviewable": 17,
+    "failed": 6,
+    "failureRate": 0.2609,
+    "htmlArtifacts": 14,
+    "observedFailures": [
+      "server restart interrupted a run",
+      "75-second HTML generation timeout",
+      "undefined model variable",
+      "incomplete HTML document",
+      "40-second HTML generation timeout"
+    ],
+    "storyboardArtifact": {
+      "runId": "0e24330a9fec486b88df4f733f8803c1",
+      "documentComplete": true,
+      "sceneBeatModel": false,
+      "buyerPersonaPresent": false,
+      "campbellArcPresent": false,
+      "duplicateIds": 2,
+      "mojibakeObserved": true,
+      "genericFallbackContent": true
+    }
+  },
+  "production": {
+    "films": 3,
+    "providers": ["bonsai", "openai"],
+    "durationSecondsPerFilm": 90,
+    "fps": 24,
+    "stillsPerFilm": 30,
+    "renderedFramesPerFilm": 2160,
+    "totalStills": 90,
+    "totalRenderedFrames": 6480,
+    "validationPassed": true,
+    "polishedOutputs": 6,
+    "captionAlignment": "segment start plus word-count proportional allocation",
+    "forcedAlignment": false
+  },
+  "rubric": {
+    "scale": "0 missing, 1 weak, 2 partial, 3 useful, 4 production-ready, 5 exemplary",
+    "dimensions": [
+      {
+        "name": "Intent capture",
+        "current": 4,
+        "target": 5,
+        "evidence": "Day 0 composer and starter journeys are clear."
+      },
+      {
+        "name": "Story structure",
+        "current": 2,
+        "target": 5,
+        "evidence": "films.json is strong; Workbench output does not preserve it."
+      },
+      {
+        "name": "Artifact typing",
+        "current": 1,
+        "target": 5,
+        "evidence": "Storyboard request is stored as generic HTML."
+      },
+      {
+        "name": "Provider orchestration",
+        "current": 3,
+        "target": 5,
+        "evidence": "Both provider paths exist, but selection is film-wide and outside the interface."
+      },
+      {
+        "name": "Continuity control",
+        "current": 2,
+        "target": 5,
+        "evidence": "Continuity JSON and seeds exist; cross-shot drift remains."
+      },
+      {
+        "name": "Audio timing",
+        "current": 4,
+        "target": 5,
+        "evidence": "Narration repair and bounded silence pass; no phoneme or word timestamps."
+      },
+      {
+        "name": "Caption fidelity",
+        "current": 3,
+        "target": 5,
+        "evidence": "Burned captions use segment timing and word-count allocation, not forced alignment."
+      },
+      {
+        "name": "Targeted recovery",
+        "current": 3,
+        "target": 5,
+        "evidence": "Narration segment regeneration exists; shot, cue, and timeline repair are not one addressable interface."
+      },
+      {
+        "name": "Review ergonomics",
+        "current": 3,
+        "target": 5,
+        "evidence": "Result/decision layout is good; no contact sheet, diff, or timeline."
+      },
+      {
+        "name": "Trace and reproducibility",
+        "current": 4,
+        "target": 5,
+        "evidence": "Prompts, seeds, provider metadata, manifests, and raw artifacts are retained."
+      }
+    ]
+  }
+}

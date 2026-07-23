@@ -10,6 +10,15 @@ resume, it's the work itself: I took Ternary-Bonsai from your Hugging Face page 
 that app against its actual job, and **documented every footgun** a developer hits along
 the way. Everything below is reproducible and every claim has an artifact.
 
+## Creative harness evaluation
+
+The [artifact-first creative harness evaluation](docs/evaluation/README.md)
+compares Bonsai Workbench and the three buyer-persona films against a declared
+GPT-5.6 / “Sol 5.6” quality contract. It includes observed failure evidence,
+journey and provider screenshots, a machine-readable scorecard, three interface
+treatments, and [RFC-0002](docs/evaluation/RFC-0002-CREATIVE-ARTIFACT-GRAPH.md)
+for treatments → storyboard → film.
+
 ## The numbers (all verified on an M4 Pro, stock Homebrew llama.cpp)
 
 | What | Result |
