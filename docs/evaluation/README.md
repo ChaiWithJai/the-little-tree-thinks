@@ -197,6 +197,8 @@ experiments, not the optimal production policy.
 
 ## Artifacts
 
+- [`PROOF.md`](PROOF.md) — visible proof ledger, checksums, and evidence
+  boundaries.
 - [`scorecard.json`](scorecard.json) — machine-readable evaluation.
 - [`sol-5-6-target.html`](sol-5-6-target.html) — declared target interface
   treatment.
