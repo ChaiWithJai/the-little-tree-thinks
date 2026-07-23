@@ -1,0 +1,24 @@
+{
+  "lm_studio": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "chat_model": "ternary-bonsai-27b-mlx",
+    "embedding_model": "text-embedding-nomic-embed-text-v1.5"
+  },
+  "html": {
+    "base_url": "http://127.0.0.1:8080/v1",
+    "model": "Qwen3.5-2B-Q4_K_M.gguf",
+    "timeout_seconds": 40,
+    "max_tokens": 1600
+  },
+  "image": {
+    "demo_dir": "/absolute/path/to/bonsai-image-demo",
+    "model": "ternary-mlx",
+    "default_size": "512x512",
+    "default_steps": 2
+  },
+  "corpora": {
+    "project": [
+      "/absolute/path/to/your/project/docs"
+    ]
+  }
+}

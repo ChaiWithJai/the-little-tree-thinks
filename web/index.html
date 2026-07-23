@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bonsai Workbench · Private local studio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-frame">
+  <header class="titlebar">
+    <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wordmark"><span>盆</span><strong>Bonsai Workbench</strong><small>local studio</small></div>
+    <div class="runtime" id="runtime"><i></i><span>Checking runtime</span></div>
+  </header>
+
+  <div class="statebar">
+    <strong>Run state</strong>
+    <div id="state-pills" class="state-pills" aria-label="Current run state"></div>
+    <span id="checkpoint">No run selected</span>
+  </div>
+
+  <div class="workbench">
+    <aside class="left-rail">
+      <button id="new-run" class="primary wide"><span>＋</span> New run</button>
+
+      <section class="rail-section">
+        <div class="section-label"><span>Benchmarks</span><span id="case-count"></span></div>
+        <div id="cases" class="case-list"></div>
+      </section>
+
+      <section class="rail-section sessions-section">
+        <div class="section-label"><span>Sessions</span><button id="refresh-runs" class="bare" aria-label="Refresh sessions">↻</button></div>
+        <div id="runs" class="session-list"><p class="muted">No retained runs yet.</p></div>
+      </section>
+
+      <section class="rail-section config-section">
+        <div class="section-label">Harness config</div>
+        <div id="harness-config" class="config-card"><p class="muted">Loading local adapters…</p></div>
+      </section>
+    </aside>
+
+    <main class="main-column">
+      <section id="view-run" class="view active">
+        <section id="day-zero" class="day-zero-screen agent-home" aria-labelledby="day-zero-title">
+          <div class="agent-home-hero">
+            <p class="day-zero-eyebrow"><span></span> One private agent · local models and tools</p>
+            <h1 id="day-zero-title" tabindex="-1">What should Bonsai<br>take care of?</h1>
+            <p class="day-zero-lede">Give it the outcome—even if the idea is rough. Bonsai will choose the right local capability, plan the work, check the result, and bring you back something you can use.</p>
+          </div>
+
+          <form id="agent-start" class="agent-start">
+            <label for="agent-request">Ask for anything</label>
+            <textarea id="agent-request" rows="3" placeholder="For example: Turn my product notes into a launch story and a polished landing page." aria-describedby="agent-route agent-start-error"></textarea>
+            <div class="agent-start-meta">
+              <span id="agent-route"><i></i> Bonsai chooses the best local capability</span>
+              <button id="agent-go" type="submit" disabled>Start <b>↑</b></button>
+            </div>
+            <small id="agent-start-error" role="alert"></small>
+          </form>
+
+          <div class="agent-home-lower">
+            <section class="journeys" aria-labelledby="journey-title">
+              <header><span>Starter journeys</span><p id="journey-title">Start here, or ask in your own words.</p></header>
+              <div class="journey-grid">
+                <button data-journey data-mode="html" data-prompt="Create a polished product launch page with a strong story, benefits, proof, and a clear call to action."><i>▱</i><strong>Launch a product</strong><small>Story → page → review</small></button>
+                <button data-journey data-mode="image" data-prompt="Create a cinematic visual direction for a calm, premium technology brand with tactile materials and warm natural light."><i>✦</i><strong>Find a visual direction</strong><small>Prompt → image → refine</small></button>
+                <button data-journey data-mode="text" data-prompt="Turn my local notes into a concise creative brief with the audience, job to be done, promise, evidence, and open questions."><i>≡</i><strong>Distill a brief</strong><small>Sources → synthesis → brief</small></button>
+                <button data-journey data-mode="text" data-prompt="Research this question across my local sources, compare the strongest evidence, and give me a cited recommendation."><i>⌕</i><strong>Research a decision</strong><small>Find → compare → recommend</small></button>
+                <button data-journey data-mode="html" data-prompt="Create an editorial visual storyboard that turns this idea into a clear sequence of scenes, beats, and transitions."><i>◫</i><strong>Build a storyboard</strong><small>Idea → beats → visual board</small></button>
+                <button data-journey data-mode="text" data-prompt="Diagnose what failed in this run, explain the likely cause in plain language, and propose the safest recovery path."><i>↺</i><strong>Recover a failed run</strong><small>Trace → diagnose → recover</small></button>
+              </div>
+            </section>
+
+            <aside class="agent-range" aria-label="What Bonsai can handle">
+              <span>What it can handle</span>
+              <ul>
+                <li><i>01</i><strong>Research and synthesize</strong></li>
+                <li><i>02</i><strong>Create pages and visuals</strong></li>
+                <li><i>03</i><strong>Plan, inspect, and verify</strong></li>
+                <li><i>04</i><strong>Refine, recover, and continue</strong></li>
+              </ul>
+            </aside>
+          </div>
+
+          <footer class="day-zero-footer">
+            <p><i></i> Models, sources, and generated work stay on this machine.</p>
+            <button id="resume-latest" class="resume-latest hidden">Resume your latest work <span>→</span></button>
+          </footer>
+        </section>
+        <header class="task-header">
+          <button id="back-start" class="back-start">← Start over</button>
+          <p><span id="task-corpus">local</span><b>›</b><span id="task-case">new-run</span></p>
+          <h1 id="task-title">Give the local harness a checkable task</h1>
+          <span id="task-intent">The run will retrieve evidence, ask the configured model, verify citations, and retain your judgment.</span>
+        </header>
+
+        <div class="run-scroll">
+          <section class="plan-card">
+            <header><strong>Plan</strong><span id="plan-progress">0/6 complete · derived from run state</span><code>evaluation pipeline</code></header>
+            <ol id="plan" class="plan-list"></ol>
+          </section>
+
+          <section>
+            <div class="section-label loop-label"><span>Execution loop</span><span id="event-count"></span></div>
+            <div id="events" class="event-list"></div>
+            <div id="activity" class="activity-card idle" role="status" aria-live="polite" tabindex="-1"></div>
+            <div id="review-panel" class="review-panel hidden">
+              <div class="review-heading"><span>Your decision</span><strong>How does this version feel?</strong><p>Keep it, describe a change, or start again. This version stays available either way.</p><button id="toggle-run-details" class="toggle-run-details">Show run details</button></div>
+              <div class="verdicts" role="group" aria-label="Verdict">
+                <button class="verdict pass" data-verdict="pass">Keep this</button>
+                <button class="verdict needs" data-verdict="needs-work">Make changes</button>
+                <button class="verdict fail" data-verdict="fail">Start again</button>
+              </div>
+              <div id="review-details" class="review-details hidden"><fieldset><legend>What kind of change?</legend><div id="review-issues" class="issue-grid"></div></fieldset>
+              <label class="review-note">Describe the change<textarea id="review-note" placeholder="For example: Make the title quieter, but keep the palette and layout."></textarea></label></div>
+              <div class="review-actions"><button id="save-review" disabled>Save decision</button><span id="review-status" role="status" aria-live="polite"></span></div>
+            </div>
+          </section>
+        </div>
+
+        <form id="composer" class="composer">
+          <div class="composer-input">
+            <textarea id="question" rows="2" placeholder="Describe a checkable task for the local model…" aria-describedby="composer-hint composer-error"></textarea>
+            <div class="composer-meta">
+              <label>Mode <select id="request-mode"><option value="html">Build HTML page</option><option value="text">Ask Bonsai</option><option value="image">Create image</option></select></label>
+              <label id="page-type-control">Page <select id="page-type"><option value="custom">Custom page</option></select></label>
+              <label id="corpus-control">Sources <select id="corpus"><option value="">All indexed sources</option></select></label>
+              <span class="local-badge"><i></i> Local</span>
+              <button id="run-case" class="send" type="submit" aria-label="Send request">↑</button>
+            </div>
+          </div>
+          <small id="composer-hint">Ask with local evidence or create an image from the same composer.</small>
+          <small id="composer-error" class="composer-error" role="alert"></small>
+        </form>
+      </section>
+    </main>
+
+    <aside class="right-rail">
+      <section>
+        <div class="section-label"><span>Artifact context</span><span id="context-total">0 est. tokens</span></div>
+        <div class="context-card">
+          <div id="context-bar" class="context-bar"></div>
+          <div id="context-legend" class="context-legend"></div>
+          <p id="context-note">Estimated from the selected run; this is not the model's configured context limit.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Pipeline adapters</div>
+        <div id="adapters" class="adapter-list"></div>
+      </section>
+
+      <section>
+        <div class="section-label"><span>Workspace evidence</span><span id="source-count"></span></div>
+        <div id="workspace-files" class="file-list"><p class="muted">Sources appear after a run.</p></div>
+      </section>
+    </aside>
+  </div>
+</div>
+<script src="/fsm.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

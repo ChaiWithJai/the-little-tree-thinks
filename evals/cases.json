@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "d2c-marketing-page",
+      "title": "Rebuild a marketing page",
+      "benchmark": "Design2Code-inspired",
+      "category": "screenshot-to-code",
+      "corpus": null,
+      "question": "Implement a responsive marketing page from the supplied desktop and mobile reference images using the repository's existing framework and assets. Match hierarchy, spacing, typography, color, and image crops without embedding the reference image.",
+      "intent": "Measure visual reconstruction and repository-aware frontend implementation.",
+      "acceptance": ["Desktop and mobile layouts match their references", "No horizontal overflow at 360px", "Semantic headings and landmarks are present", "Existing build and lint commands pass"]
+    },
+    {
+      "id": "web2code-dashboard",
+      "title": "Reconstruct a data dashboard",
+      "benchmark": "Web2Code-inspired",
+      "category": "page-to-code",
+      "corpus": null,
+      "question": "Recreate the supplied analytics dashboard as maintainable components. Preserve the navigation shell, KPI cards, chart region, table density, and responsive stacking behavior while reusing the project's design tokens.",
+      "intent": "Measure structural decomposition and fidelity on a dense application surface.",
+      "acceptance": ["Reusable components replace duplicated markup", "Table remains readable at tablet width", "Loading and empty states are implemented", "Visual regression screenshots pass"]
+    },
+    {
+      "id": "frontend-tabs-modal",
+      "title": "Build tabs and a modal",
+      "benchmark": "FrontendBench-inspired",
+      "category": "interactive-components",
+      "corpus": null,
+      "question": "Implement a settings card with three tabs and an edit modal. Tab state must be reflected in the URL, modal changes must support save and cancel, and focus must return to the trigger after closing.",
+      "intent": "Measure coordinated component state, navigation state, and focus behavior.",
+      "acceptance": ["Back and forward navigation restore the selected tab", "Escape and backdrop close the modal", "Focus is trapped while the modal is open", "Interaction tests cover save and cancel"]
+    },
+    {
+      "id": "frontend-async-form",
+      "title": "Repair an asynchronous form",
+      "benchmark": "FrontendBench-inspired",
+      "category": "forms-and-feedback",
+      "corpus": null,
+      "question": "Fix the account form so client validation, server validation, submission progress, success feedback, and retryable errors behave consistently. Prevent duplicate submissions and preserve user input after a failed request.",
+      "intent": "Measure robust form state and failure recovery rather than happy-path rendering.",
+      "acceptance": ["Invalid fields expose associated error messages", "Only one request can be active", "Server errors preserve entered values", "Success and retry flows have automated tests"]
+    },
+    {
+      "id": "frontend-combobox-a11y",
+      "title": "Implement an accessible combobox",
+      "benchmark": "FrontendBench-inspired",
+      "category": "accessibility",
+      "corpus": null,
+      "question": "Implement an asynchronous people-search combobox with debounced results, keyboard navigation, highlighted matches, selection chips, and an empty state. Follow the ARIA combobox interaction pattern.",
+      "intent": "Measure accessibility semantics together with nontrivial interaction state.",
+      "acceptance": ["Arrow keys, Enter, Escape, and Tab behave correctly", "ARIA expanded, controls, and active-descendant states are valid", "Stale network responses cannot replace newer results", "Screen-reader labels are meaningful"]
+    },
+    {
+      "id": "frontend-data-grid",
+      "title": "Complete a stateful data grid",
+      "benchmark": "FrontendBench-inspired",
+      "category": "data-interaction",
+      "corpus": null,
+      "question": "Complete the issue table so search, status filters, sortable columns, pagination, row selection, and bulk actions compose correctly. Persist shareable view state in the query string.",
+      "intent": "Measure interacting state machines and deterministic derived data.",
+      "acceptance": ["Filtering resets invalid page positions", "Sort order is stable and announced accessibly", "Bulk actions affect only selected visible records", "URL state round-trips after reload"]
+    },
+    {
+      "id": "swe-mm-responsive-regression",
+      "title": "Fix a responsive regression",
+      "benchmark": "SWE-bench Multimodal-inspired",
+      "category": "visual-bug-fix",
+      "corpus": null,
+      "question": "Use the attached before-and-expected screenshots to diagnose and fix the responsive regression in the existing navigation. Keep desktop behavior unchanged while correcting the clipped mobile menu and misplaced overlay.",
+      "intent": "Measure visual evidence interpretation and a minimal repository patch.",
+      "acceptance": ["The mobile menu is fully reachable at 320px and 390px", "Overlay covers only the intended viewport", "Desktop snapshots remain unchanged", "A regression test fails before and passes after the fix"]
+    },
+    {
+      "id": "swe-mm-theme-regression",
+      "title": "Repair dark-mode contrast",
+      "benchmark": "SWE-bench Multimodal-inspired",
+      "category": "visual-accessibility-bug",
+      "corpus": null,
+      "question": "Diagnose the dark-mode differences shown in the issue screenshot and repair the token or component styles causing unreadable text, invisible borders, and incorrect chart labels without hard-coding per-component colors.",
+      "intent": "Measure screenshot-guided debugging across shared design tokens.",
+      "acceptance": ["Affected text meets WCAG AA contrast", "Shared tokens fix every affected component", "Light mode has no visual regression", "Theme tests cover both color schemes"]
+    },
+    {
+      "id": "swe-state-race",
+      "title": "Eliminate stale search results",
+      "benchmark": "SWE-bench Verified-inspired",
+      "category": "repository-bug-fix",
+      "corpus": null,
+      "question": "Fix the existing live-search race where a slow earlier request can overwrite a newer result set. Preserve caching and loading indicators, cancel work when possible, and avoid state updates after unmount.",
+      "intent": "Measure causal debugging and a narrow regression-safe patch in an existing codebase.",
+      "acceptance": ["Only the latest query may update visible results", "Unmount produces no state update warning", "Caching behavior is preserved", "A deterministic race-condition test is added"]
+    },
+    {
+      "id": "swe-optimistic-rollback",
+      "title": "Fix optimistic update rollback",
+      "benchmark": "SWE-bench Verified-inspired",
+      "category": "repository-feature-fix",
+      "corpus": null,
+      "question": "Repair the optimistic favorite toggle so rapid clicks, server rejection, and refetching cannot leave the count and selected state inconsistent. Make the smallest change compatible with the repository's data-fetching conventions.",
+      "intent": "Measure repository navigation, concurrency reasoning, and regression testing.",
+      "acceptance": ["Rapid toggles settle on the final user intent", "Rejected mutations roll back state and count", "Successful mutations reconcile with server data", "Existing unrelated cache behavior remains unchanged"]
+    }
+  ],
+  "review_issues": [
+    {"id": "functional-failure", "label": "Functional failure"},
+    {"id": "visual-fidelity", "label": "Visual fidelity"},
+    {"id": "accessibility", "label": "Accessibility"},
+    {"id": "responsive-regression", "label": "Responsive regression"},
+    {"id": "missing-tests", "label": "Missing tests"},
+    {"id": "scope-drift", "label": "Scope drift"},
+    {"id": "runtime-failure", "label": "Runtime failure"}
+  ]
+}

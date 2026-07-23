@@ -1,12 +1,12 @@
 # Evaluation source manifest
 
-This manifest records the evidence inputs used on 2026-07-23. Absolute paths
-identify the local source of record; copied screenshots under `assets/` make the
-review package portable.
+This manifest records the evidence inputs used on 2026-07-23. Private absolute
+paths are omitted. Copied screenshots under `assets/` make the review package
+portable.
 
 ## Bonsai Workbench
 
-- Repository: `/Users/jaybhagat/projects/bonsai`
+- Repository: this repository
 - Run database: `.bonsai-agent/evaluations/runs.sqlite3`
 - Storyboard run: `0e24330a9fec486b88df4f733f8803c1`
 - Storyboard artifact:
@@ -16,7 +16,7 @@ review package portable.
 
 ## Buyer-persona films
 
-- Repository: `/Users/jaybhagat/projects/whatif`
+- Repository: sibling `whatif` checkout
 - Treatments: `docs/bonsai-buyer-persona-treatments.md`
 - Production root: `productions/bonsai-persona-films`
 - Story and shots: `productions/bonsai-persona-films/films.json`
@@ -33,17 +33,14 @@ review package portable.
 
 ## Brief inputs
 
-- Bonsai / wabi-sabi / Campbell persona mapping:
-  `/Users/jaybhagat/.codex/attachments/9a07e58e-6821-4506-970c-07e45817dd6c/pasted-text-1.txt`
-- Standalone Workbench / source content:
-  `/Users/jaybhagat/.codex/attachments/bfc52b62-965e-4b9e-bead-784bae358cda/pasted-text.txt`
-- Natural Uniform creative source:
-  `/Users/jaybhagat/.codex/attachments/154adace-5645-4e24-a812-34899427dc9f/pasted-text.txt`
+- Bonsai, Campbell, and buyer persona mapping from a local brief attachment.
+- Standalone Workbench source content from a local brief attachment.
+- Natural Uniform creative source from a local brief attachment.
 
 ## Commands used
 
 ```bash
-node /Users/jaybhagat/projects/whatif/productions/bonsai-persona-films/tools/validate-production.mjs
+node ../whatif/productions/bonsai-persona-films/tools/validate-production.mjs
 ffprobe -v error -show_entries format=duration:stream=index,codec_type,codec_name,duration <movie>
 ffmpeg -hide_banner -i <movie> -af silencedetect=noise=-42dB:d=0.8 -f null -
 ```
